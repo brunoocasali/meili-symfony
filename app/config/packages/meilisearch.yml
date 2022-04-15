@@ -1,0 +1,6 @@
+meili_search:
+  url: 'http://meilisearch:7700'
+  api_key: 'masterKey'
+  indices:
+    - name: quotes
+      class: App\Entity\Quote
