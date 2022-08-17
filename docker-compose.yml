@@ -23,6 +23,13 @@ services:
       - '9000:9000'
     volumes:
       - ./app:/var/www/symfony_docker
+      # - ../../meili/meilisearch-symfony/:/home/meili-php
+      # "repositories": [
+      #   {
+      #       "type": "vcs",
+      #       "url": "/home/meili-php"
+      #   }
+      # ],
     depends_on:
       - database
       - meilisearch
@@ -31,12 +38,11 @@ services:
     image: getmeili/meilisearch:latest
     tty: true
     stdin_open: true
-    container_name: meilisearch
     environment: 
       - MEILI_MASTER_KEY=masterKey
       - MEILI_NO_ANALYTICS=true
     ports:
-      - "7700:7700"
+      - "7700"
 
   nginx:
     container_name: nginx
