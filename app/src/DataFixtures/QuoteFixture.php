@@ -17,8 +17,7 @@ class QuoteFixture extends Fixture {
     }
 
     public function load(ObjectManager $manager) {
-
-        for ($i = 0; $i < 50; $i++) {
+        for ($i = 0; $i < 500; $i++) {
             $manager->persist($this->getQuote());
         }
         $manager->flush();
